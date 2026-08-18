@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    background-color: #F4F8FA;
+    color: #1E293B;
+    font-family: 'Lato', sans-serif;
+  }
+}
+
+/* Pool Brothers Official Component Utilities */
+
+/* Primary Button: Flag Blue (#003B73) */
+.btn-primary-pb {
+  background-color: #003B73;
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px -5px rgba(0, 59, 115, 0.3);
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn-primary-pb:hover {
+  background-color: #002D59;
+  box-shadow: 0 15px 25px -5px rgba(0, 59, 115, 0.4);
+  transform: translateY(-2px);
+}
+
+/* Secondary Button: Pool Cyan (#00D2D2) */
+.btn-secondary-pb {
+  background-color: #00D2D2;
+  color: #00254A;
+  font-weight: 900;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px -5px rgba(0, 210, 210, 0.35);
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn-secondary-pb:hover {
+  background-color: #00B8B8;
+  box-shadow: 0 15px 25px -5px rgba(0, 210, 210, 0.45);
+  transform: translateY(-2px);
+}
+
+/* Red Accent Button / Badge: Striped Red (#C8102E) */
+.btn-red-pb {
+  background-color: #C8102E;
+  color: #FFFFFF;
+  font-weight: 700;
+  padding: 0.875rem 1.75rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 20px -5px rgba(200, 16, 46, 0.3);
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.btn-red-pb:hover {
+  background-color: #9E0B22;
+  transform: translateY(-2px);
+}
+
+/* Input Form Field */
+.input-pb {
+  width: 100%;
+  padding: 0.875rem 1rem;
+  border-radius: 0.75rem;
+  background-color: #FFFFFF;
+  border: 2px solid rgba(0, 59, 115, 0.2);
+  color: #0F172A;
+  font-size: 0.875rem;
+  font-weight: 500;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.input-pb:focus {
+  border-color: #003B73;
+}
+
+/* Cards & Panels */
+.card-pb {
+  background-color: #FFFFFF;
+  border-radius: 1rem;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 10px 30px -10px rgba(0, 59, 115, 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-pb:hover {
+  box-shadow: 0 20px 40px -10px rgba(0, 59, 115, 0.15);
+  border-color: rgba(0, 210, 210, 0.5);
+}
+
+/* Active Feedback & Micro-interactions */
+.btn-primary-pb:active,
+.btn-secondary-pb:active,
+.btn-red-pb:active {
+  transform: scale(0.98) translateY(0);
+}
+
+/* Keyframe Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Reduced Motion Accessibility Path */
+@media (prefers-reduced-motion: reduce) {
+  .animate-fade-in-up,
+  .animate-pulse,
+  .animate-ping {
+    animation: none !important;
+    transform: none !important;
+  }
+
+  .btn-primary-pb,
+  .btn-secondary-pb,
+  .btn-red-pb,
+  .card-pb {
+    transition: color 0.15s ease, background-color 0.15s ease, border-color 0.15s ease !important;
+    transform: none !important;
+  }
+}

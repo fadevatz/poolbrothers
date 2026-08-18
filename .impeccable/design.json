@@ -1,0 +1,95 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-18T15:13:00Z",
+  "title": "Design System: Pool Brothers",
+  "extensions": {
+    "colorMeta": {
+      "primary": { "role": "primary", "displayName": "Flag Blue", "canonical": "#003B73", "tonalRamp": ["#001830", "#00254A", "#003B73", "#00529E", "#1A6BB8", "#4D8FD1", "#80B3E0", "#E6F0FA"] },
+      "secondary": { "role": "secondary", "displayName": "Pool Cyan", "canonical": "#00D2D2", "tonalRamp": ["#003A3A", "#006B6B", "#00A3A3", "#00D2D2", "#33E0E0", "#66EBEB", "#99F2F2", "#E6FCFC"] },
+      "accent-red": { "role": "accent", "displayName": "Striped Red", "canonical": "#C8102E", "tonalRamp": ["#3D050D", "#660817", "#9E0B22", "#C8102E", "#E03852", "#E86B7E", "#F09FA9", "#FAF0F2"] },
+      "neutral-bg": { "role": "neutral", "displayName": "Ice Background", "canonical": "#F4F8FA", "tonalRamp": ["#0A1728", "#1E293B", "#334155", "#64748B", "#94A3B8", "#CBD5E1", "#E2E8F0", "#F4F8FA"] },
+      "neutral-surface": { "role": "neutral", "displayName": "Pure White", "canonical": "#FFFFFF", "tonalRamp": ["#000000", "#1A1A1A", "#333333", "#666666", "#999999", "#CCCCCC", "#E6E6E6", "#FFFFFF"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Hero main headlines" },
+      "headline": { "displayName": "Headline", "purpose": "Section titles" },
+      "title": { "displayName": "Title", "purpose": "Card titles and subtitles" },
+      "body": { "displayName": "Body", "purpose": "Paragraphs and descriptive text" },
+      "label": { "displayName": "Label", "purpose": "Buttons, form labels, and badges" }
+    },
+    "shadows": [
+      { "name": "pb-card", "value": "0 10px 30px -10px rgba(0, 59, 115, 0.08)", "purpose": "Default elevation for cards" },
+      { "name": "pb-hover", "value": "0 20px 40px -10px rgba(0, 59, 115, 0.15)", "purpose": "Hover state elevation" },
+      { "name": "glow-blue", "value": "0 0 25px rgba(0, 59, 115, 0.35)", "purpose": "Primary button glow" },
+      { "name": "glow-cyan", "value": "0 0 25px rgba(0, 210, 210, 0.4)", "purpose": "Cyan accent glow" }
+    ],
+    "motion": [
+      { "name": "ease-standard", "value": "cubic-bezier(0.4, 0, 0.2, 1)", "purpose": "Default transition for cards and hover states" }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Botão primário para ações principais e formulário.",
+      "html": "<button class=\"ds-btn-primary\">SOLICITAR ORÇAMENTO</button>",
+      "css": ".ds-btn-primary { background: #003B73; color: #FFFFFF; font-weight: 700; padding: 14px 28px; border-radius: 12px; border: none; font-size: 14px; box-shadow: 0 10px 20px -5px rgba(0, 59, 115, 0.3); transition: all 0.2s ease-in-out; cursor: pointer; } .ds-btn-primary:hover { background: #002D59; transform: translateY(-2px); box-shadow: 0 15px 25px -5px rgba(0, 59, 115, 0.4); }"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Botão secundário em ciano vibrante.",
+      "html": "<button class=\"ds-btn-secondary\">FALAR NO WHATSAPP</button>",
+      "css": ".ds-btn-secondary { background: #00D2D2; color: #00254A; font-weight: 900; padding: 14px 28px; border-radius: 12px; border: none; font-size: 14px; box-shadow: 0 10px 20px -5px rgba(0, 210, 210, 0.35); transition: all 0.2s ease-in-out; cursor: pointer; } .ds-btn-secondary:hover { background: #00B8B8; transform: translateY(-2px); box-shadow: 0 15px 25px -5px rgba(0, 210, 210, 0.45); }"
+    },
+    {
+      "name": "Input Field",
+      "kind": "input",
+      "refersTo": "input-primary",
+      "description": "Campo de entrada para formulários.",
+      "html": "<input type=\"text\" class=\"ds-input-primary\" placeholder=\"Seu Nome Completo\" />",
+      "css": ".ds-input-primary { width: 100%; background: #FFFFFF; border: 2px solid rgba(0, 59, 115, 0.2); color: #0A1728; border-radius: 12px; padding: 14px 16px; font-size: 14px; outline: none; transition: border-color 0.2s ease-in-out; } .ds-input-primary:focus { border-color: #003B73; }"
+    },
+    {
+      "name": "Card Container",
+      "kind": "card",
+      "refersTo": "card-primary",
+      "description": "Contêiner de conteúdo elevado.",
+      "html": "<div class=\"ds-card-primary\"><h3>Método Americano</h3><p>Acabamento de luxo em quartzo e pebble sem emendas.</p></div>",
+      "css": ".ds-card-primary { background: #FFFFFF; border-radius: 16px; border: 1px solid rgba(226, 232, 240, 0.8); padding: 24px; box-shadow: 0 10px 30px -10px rgba(0, 59, 115, 0.08); transition: all 0.3s ease; } .ds-card-primary:hover { border-color: rgba(0, 210, 210, 0.5); box-shadow: 0 20px 40px -10px rgba(0, 59, 115, 0.15); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Sculpted Crystal Sanctuary",
+    "overview": "O sistema de design da Pool Brothers traduz a solidez da engenharia autêntica americana com a elegância cristalina de piscinas de resort de luxo.",
+    "keyCharacteristics": [
+      "Autoridade Náutica & Corporativa (Azul Marinho #003B73)",
+      "Luminosidade Aquática (Ciano #00D2D2)",
+      "Geometria Suave (Radius 12px / 16px)",
+      "Herança Americana (Vermelho #C8102E pontual)"
+    ],
+    "rules": [
+      { "name": "The Crystal Highlight Rule", "body": "O ciano (#00D2D2) deve ser aplicado em no máximo 15% de qualquer tela.", "section": "colors" },
+      { "name": "The Contrast Authority Rule", "body": "Títulos em azul marinho profundo (#003B73) sempre possuem peso forte (700 ou 900).", "section": "typography" },
+      { "name": "The Responsive Depth Rule", "body": "Superfícies permanecem planas ou levemente sombreadas em repouso e ganham elevação em hover.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do manter a hierarquia de cores onde o Azul Bandeira comanda a estrutura e o Ciano direciona a ação.",
+      "Do utilizar raios de curvatura consistentes de 12px para elementos de ação e 16px para contêineres.",
+      "Do aplicar o efeito de transição transform: translateY(-2px) em estados de hover."
+    ],
+    "donts": [
+      "Don't utilizar fundos cinzas puros; prefira sempre a tonalidade gélida #F4F8FA.",
+      "Don't aplicar a cor Vermelha (#C8102E) de forma generalizada; limite seu uso a selos de garantia e CTAs de urgência.",
+      "Don't remover os estados de focus ou hover dos componentes interativos."
+    ]
+  }
+}
