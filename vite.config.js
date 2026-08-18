@@ -6,6 +6,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3001,
-    host: true
+    host: true,
+    allowedHosts: ['site.devatz.cloud']
+  },
+  preview: {
+    allowedHosts: ['site.devatz.cloud']
   }
 })
