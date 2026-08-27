@@ -2,10 +2,8 @@ import React from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
 import AboutAuthority from './components/AboutAuthority';
+import AboutUs from './components/AboutUs';
 import Services from './components/Services';
-import ColorSwatches from './components/ColorSwatches';
-import Differentials from './components/Differentials';
-import ArchitectsSpace from './components/ArchitectsSpace';
 import BeforeAfterSlider from './components/BeforeAfterSlider';
 import Gallery from './components/Gallery';
 import LeadForm from './components/LeadForm';
@@ -22,13 +20,11 @@ export default function App() {
       {/* Main Sections */}
       <main>
         <Hero />
+        <AboutUs />
         <AboutAuthority />
         <Services />
-        <ColorSwatches />
-        <Differentials />
-        <ArchitectsSpace />
-        <BeforeAfterSlider />
         <Gallery />
+        <BeforeAfterSlider />
         <LeadForm />
       </main>
 

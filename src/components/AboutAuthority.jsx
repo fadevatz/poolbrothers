@@ -1,59 +1,72 @@
 import React from 'react';
-import { Wrench, ShieldCheck, Globe, UserCheck } from 'lucide-react';
+import { Sparkles, Grid, Clock, ShieldCheck, CheckCircle2, ArrowRight } from 'lucide-react';
 
 export default function AboutAuthority() {
   return (
-    <section id="metodo" className="py-24 relative overflow-hidden bg-white text-slate-900">
+    <section id="metodo" className="py-20 sm:py-28 relative overflow-hidden bg-flagBlue text-white shadow-inner">
       
+      {/* Background Refraction Illumination */}
+      <div className="absolute top-0 right-0 w-96 h-96 bg-poolCyan/15 rounded-full filter blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-900/40 rounded-full filter blur-3xl pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-flagBlue/10 border border-flagBlue/20 text-flagBlue text-xs font-black uppercase tracking-widest">
-            <Globe className="w-4 h-4 text-stripedRed" />
-            Tradição & Autoridade Internacional
-          </div>
-          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-flagBlue tracking-tight">
-            O Verdadeiro Padrão Americano, <span className="text-poolCyan-dark italic font-normal">Sem Imitações.</span>
+          <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-white tracking-tight leading-tight">
+            O Autêntico Método Americano
           </h2>
-          <p className="text-slate-600 font-normal text-base sm:text-lg leading-relaxed">
-            Trouxemos a tecnologia que revolucionou o mercado dos EUA para as residências mais exclusivas do Brasil.
+          
+          <p className="text-slate-200 font-normal text-base sm:text-lg leading-relaxed">
+            A fusão perfeita entre a tecnologia de revestimento mineral contínuo e a elegância de azulejos e pastilhas nobres na linha d'água.
           </p>
         </div>
 
-        {/* Highlight Banner (Cockpit Spec Sheet) */}
-        <div className="bg-flagBlue text-white p-8 sm:p-12 rounded-3xl border-4 border-stripedRed shadow-2xl mb-16 relative overflow-hidden">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        {/* Hero Highlight Banner: Combination of Plaster + Tiles */}
+        <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl p-8 sm:p-12 shadow-2xl mb-16 text-left relative overflow-hidden group hover:border-poolCyan/50 transition-all duration-500">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
             
-            <div className="lg:col-span-8 space-y-5 text-left">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded bg-stripedRed text-white font-bold text-xs uppercase tracking-wider shadow">
-                <span>Diferencial Crítico de Engenharia</span>
-              </div>
+            {/* Text Side */}
+            <div className="lg:col-span-7 space-y-6">
               <h3 className="font-display text-3xl sm:text-4xl font-bold text-white leading-snug">
-                Tecnologia, Equipamentos e Profissionais Importados dos Estados Unidos.
+                Revestimento Monolítico no Fundo + Pastilhas de Luxo na Linha D'água
               </h3>
-              <p className="text-slate-200 text-base leading-relaxed font-normal">
-                Enquanto concorrentes tentam improvisar com ferramentas manuais locais, a <strong className="text-poolCyan font-bold">Pool Brothers importa diretamente dos EUA</strong> o maquinário pneumático de jateamento de alta pressão, os pigmentos de Plaster e a mão de obra especializada com <strong>mais de 25 anos de atuação na Flórida e Califórnia</strong>. O resultado é um design único de piscina de luxo, sem junções e de durabilidade incomparável.
-              </p>
-            </div>
 
-            <div className="lg:col-span-4 flex flex-col gap-4">
-              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-poolCyan/40 flex items-center gap-4 text-left">
-                <Wrench className="w-8 h-8 text-poolCyan shrink-0" />
-                <div>
-                  <span className="text-xs font-bold text-poolCyan uppercase tracking-widest block">Telemetria de Maquinário</span>
-                  <h4 className="text-sm font-black text-white">Maquinário 100% EUA</h4>
-                  <p className="text-xs text-slate-300">Pneumático & Hidráulico Próprio</p>
+              <p className="text-slate-100 text-base sm:text-lg leading-relaxed font-normal">
+                Unimos o melhor da tecnologia americana ao acabamento de alto padrão. Aplicamos o <strong className="text-poolCyan">Plaster Mineral</strong> no fundo e paredes da piscina — eliminando rejuntes encardidos, trincas e infiltrações —, enquanto a linha d'água e os degraus recebem pastilhas de vidro ou azulejos nobres.
+              </p>
+
+              <p className="text-slate-200 text-sm sm:text-base leading-relaxed font-normal">
+                O resultado é uma piscina com manutenção extremamente reduzida, facilidade de limpeza e valorização imediata do seu imóvel.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4 border-t border-white/15">
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-poolCyan shrink-0" />
+                  <span className="text-sm font-semibold text-white">Fundo 100% contínuo (zero rejunte soltando)</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-poolCyan shrink-0" />
+                  <span className="text-sm font-semibold text-white">Linha d'água com pastilhas de alta durabilidade</span>
                 </div>
               </div>
+            </div>
 
-              <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-md border border-poolCyan/40 flex items-center gap-4 text-left">
-                <UserCheck className="w-8 h-8 text-poolCyan shrink-0" />
-                <div>
-                  <span className="text-xs font-bold text-poolCyan uppercase tracking-widest block">Certificação Técnica</span>
-                  <h4 className="text-sm font-black text-white">+25 Anos de Prática EUA</h4>
-                  <p className="text-xs text-slate-300">Técnicos Certificados nos EUA</p>
+            {/* Photo Card Side */}
+            <div className="lg:col-span-5 relative">
+              <div className="relative rounded-2xl overflow-hidden border border-white/20 shadow-2xl group/img">
+                <img 
+                  src="/images/after_pool.png" 
+                  alt="Piscina de luxo concluída combinando revestimento Plaster e pastilhas na linha d'água" 
+                  className="w-full h-[320px] sm:h-[380px] object-cover transform group-hover/img:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent" />
+                
+                <div className="absolute bottom-4 left-4 right-4 p-4 rounded-xl bg-slate-900/90 backdrop-blur-md border border-white/20 text-white text-xs font-semibold flex items-center justify-between">
+                  <div className="flex items-center gap-2">
+                    <ShieldCheck className="w-4 h-4 text-poolCyan" />
+                    <span>Manutenção Reduzida & Valorização do Imóvel</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -61,65 +74,113 @@ export default function AboutAuthority() {
           </div>
         </div>
 
-        {/* Stats & Key Pillars Grid (Cockpit Metric Cards) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-          
-          <div className="card-pb p-7 space-y-3 border-2 border-flagBlue/20 hover:border-poolCyan">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-flagBlue uppercase tracking-wider">Métrica 01</span>
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+        {/* 3 Column Clean Grid (Materials & Coatings) */}
+        <div className="space-y-6 text-left">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8 border-b border-white/15 pb-4">
+            <div>
+              <h3 className="font-display text-3xl font-bold text-white">
+                Soluções e Revestimentos Aplicados
+              </h3>
+              <p className="text-slate-200 text-sm sm:text-base">
+                Conheça os três pilares de materiais utilizados no Método Americano.
+              </p>
             </div>
-            <div className="text-4xl sm:text-5xl font-black text-flagBlue">
-              +25
-            </div>
-            <h4 className="text-lg font-black text-slate-900">Anos de Prática nos EUA</h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-medium">
-              Décadas de atuação na Flórida e Califórnia aplicando Plaster e Tela Armada nas mansões mais exclusivas dos EUA.
-            </p>
+            <a href="#contato" className="inline-flex items-center gap-2 text-poolCyan font-bold text-sm hover:underline">
+              <span>Consultar materiais para o seu projeto</span>
+              <ArrowRight className="w-4 h-4" />
+            </a>
           </div>
 
-          <div className="card-pb p-7 space-y-3 border-2 border-flagBlue/20 hover:border-poolCyan">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-poolCyan-dark uppercase tracking-wider">Métrica 02</span>
-              <span className="w-2 h-2 rounded-full bg-poolCyan" />
-            </div>
-            <div className="text-4xl sm:text-5xl font-black text-poolCyan-dark">
-              100%
-            </div>
-            <h4 className="text-lg font-black text-slate-900">Tecnologia EUA</h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-medium">
-              Bombas de jateamento pneumático de vazão contínua e agregados minerais importados diretamente dos EUA.
-            </p>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            
+            {/* Card 01: Plaster Mineral */}
+            <div className="bg-white text-slate-900 rounded-2xl p-8 space-y-5 border-2 border-transparent hover:border-poolCyan transition-all shadow-xl flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-flagBlue/10 flex items-center justify-center border border-flagBlue/20">
+                  <Sparkles className="w-6 h-6 text-flagBlue" />
+                </div>
+                
+                <div>
+                  <span className="text-xs font-bold text-poolCyan-dark uppercase tracking-wider block mb-1">Tecnologia Base</span>
+                  <h4 className="text-xl font-bold text-flagBlue">Plaster Mineral Quartz & Pebble</h4>
+                </div>
 
-          <div className="card-pb p-7 space-y-3 border-2 border-flagBlue/20 hover:border-poolCyan">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-stripedRed uppercase tracking-wider">Métrica 03</span>
-              <span className="w-2 h-2 rounded-full bg-stripedRed" />
-            </div>
-            <div className="text-4xl sm:text-5xl font-black text-stripedRed">
-              1 Dia
-            </div>
-            <h4 className="text-lg font-black text-slate-900">Aplicação Plaster</h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-medium">
-              Revestimento jateado e alisado em poucas horas, reduzindo o tempo de aplicação para apenas 1 único dia.
-            </p>
-          </div>
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  Revestimento monolítico mineral jateado a alta pressão. Proporciona superfície 100% contínua sem rejunte, toque aveludado e refração azul cristalina sob o sol.
+                </p>
+              </div>
 
-          <div className="card-pb p-7 space-y-3 border-2 border-flagBlue/20 hover:border-poolCyan">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-flagBlue uppercase tracking-wider">Métrica 04</span>
-              <span className="w-2 h-2 rounded-full bg-emerald-500" />
+              <ul className="space-y-2 pt-4 border-t border-slate-100 text-xs text-slate-700">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-poolCyan-dark shrink-0" />
+                  <span>Aplicação pneumática ágil em 1 dia</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-poolCyan-dark shrink-0" />
+                  <span>Sem peças soltando no fundo</span>
+                </li>
+              </ul>
             </div>
-            <div className="text-4xl sm:text-5xl font-black text-flagBlue">
-              Zero
-            </div>
-            <h4 className="text-lg font-black text-slate-900">Entulho na Obra</h4>
-            <p className="text-xs text-slate-600 leading-relaxed font-medium">
-              Sem quebradeira prolongada nem sacos de rejunte espalhados pela área de lazer da sua residência.
-            </p>
-          </div>
 
+            {/* Card 02: Azulejos & Pastilhas */}
+            <div className="bg-white text-slate-900 rounded-2xl p-8 space-y-5 border-2 border-transparent hover:border-poolCyan transition-all shadow-xl flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-poolCyan/10 flex items-center justify-center border border-poolCyan/30">
+                  <Grid className="w-6 h-6 text-poolCyan-dark" />
+                </div>
+                
+                <div>
+                  <span className="text-xs font-bold text-flagBlue uppercase tracking-wider block mb-1">Acabamento Combinado</span>
+                  <h4 className="text-xl font-bold text-flagBlue">Azulejos & Pastilhas de Luxo</h4>
+                </div>
+
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  Mosaicos de vidro e cerâmicas nobres instalados na linha d'água, prainhas e escadas. Encaixe nivelado e harmonizado com a camada mineral.
+                </p>
+              </div>
+
+              <ul className="space-y-2 pt-4 border-t border-slate-100 text-xs text-slate-700">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-poolCyan-dark shrink-0" />
+                  <span>Moldura elegante para a linha d'água</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-poolCyan-dark shrink-0" />
+                  <span>Transição suave ao toque</span>
+                </li>
+              </ul>
+            </div>
+
+            {/* Card 03: Agilidade & Transformação em 1 Dia */}
+            <div className="bg-white text-slate-900 rounded-2xl p-8 space-y-5 border-2 border-transparent hover:border-poolCyan transition-all shadow-xl flex flex-col justify-between">
+              <div className="space-y-4">
+                <div className="w-12 h-12 rounded-xl bg-stripedRed/10 flex items-center justify-center border border-stripedRed/30">
+                  <Clock className="w-6 h-6 text-stripedRed" />
+                </div>
+                
+                <div>
+                  <span className="text-xs font-bold text-stripedRed uppercase tracking-wider block mb-1">Velocidade Recorde</span>
+                  <h4 className="text-xl font-bold text-flagBlue">Transformação Ágil em Até 1 Dia</h4>
+                </div>
+
+                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
+                  Esqueça obras arrastadas por meses. Com o jateamento pneumático de vazão contínua, a aplicação é finalizada em apenas poucas horas, liberando a piscina rapidamente.
+                </p>
+              </div>
+
+              <ul className="space-y-2 pt-4 border-t border-slate-100 text-xs text-slate-700">
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-poolCyan-dark shrink-0" />
+                  <span>Aplicação jateada concluída em 1 dia</span>
+                </li>
+                <li className="flex items-center gap-2">
+                  <CheckCircle2 className="w-4 h-4 text-poolCyan-dark shrink-0" />
+                  <span>Zero entulho ou quebradeira na sua obra</span>
+                </li>
+              </ul>
+            </div>
+
+          </div>
         </div>
 
       </div>

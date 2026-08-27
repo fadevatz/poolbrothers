@@ -15,11 +15,9 @@ export default function Header() {
   }, []);
 
   const navLinks = [
+    { name: 'Quem Somos', href: '#quem-somos' },
     { name: 'O Método', href: '#metodo' },
     { name: 'Serviços', href: '#servicos' },
-    { name: 'Cores', href: '#cores' },
-    { name: 'Diferenciais', href: '#diferenciais' },
-    { name: 'Espaço do Arquiteto', href: '#arquitetos' },
     { name: 'Galeria', href: '#galeria' },
     { name: 'Contato', href: '#contato' },
   ];

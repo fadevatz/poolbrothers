@@ -18,7 +18,7 @@ export default function WhatsAppButton() {
                 PB
               </div>
               <div>
-                <h4 className="text-xs font-black text-flagBlue">Pool Brothers VIP</h4>
+                <h4 className="text-xs font-black text-flagBlue">Pool Brothers</h4>
                 <p className="text-xs text-emerald-600 font-bold">Online agora • Resposta rápida</p>
               </div>
             </div>

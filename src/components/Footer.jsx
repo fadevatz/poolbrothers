@@ -12,7 +12,7 @@ export default function Footer() {
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-10 mb-12 text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 mb-12 text-left">
           
           {/* Brand Info Column */}
           <div className="lg:col-span-2 space-y-4">
@@ -39,30 +39,17 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="text-xs font-black text-poolCyan uppercase tracking-widest">Navegação</h4>
             <ul className="space-y-2 text-xs text-slate-300 font-bold">
+              <li><a href="#quem-somos" className="hover:text-poolCyan transition-colors">Quem Somos</a></li>
               <li><a href="#metodo" className="hover:text-poolCyan transition-colors">O Método Americano</a></li>
               <li><a href="#servicos" className="hover:text-poolCyan transition-colors">Serviços Premium</a></li>
-              <li><a href="#cores" className="hover:text-poolCyan transition-colors">Catálogo de Cores</a></li>
-              <li><a href="#diferenciais" className="hover:text-poolCyan transition-colors">Diferenciais 1 Dia</a></li>
-              <li><a href="#arquitetos" className="hover:text-poolCyan transition-colors">Espaço do Arquiteto</a></li>
               <li><a href="#galeria" className="hover:text-poolCyan transition-colors">Galeria de Fotos</a></li>
-            </ul>
-          </div>
-
-          {/* Hubs / Regions */}
-          <div className="space-y-3">
-            <h4 className="text-xs font-black text-poolCyan uppercase tracking-widest">Polos de Atendimento</h4>
-            <ul className="space-y-2 text-xs text-slate-300 font-medium">
-              <li>• São Paulo (Capital & Região)</li>
-              <li>• Alphaville & Tamboré</li>
-              <li>• Fazenda da Grama / Quinta Baroneza</li>
-              <li>• Londrina & Maringá (PR)</li>
-              <li>• Porto Rico (PR)</li>
+              <li><a href="#contato" className="hover:text-poolCyan transition-colors">Contato & Orçamento</a></li>
             </ul>
           </div>
 
           {/* Contact Direct Info */}
           <div className="space-y-3">
-            <h4 className="text-xs font-black text-poolCyan uppercase tracking-widest">Contato VIP</h4>
+            <h4 className="text-xs font-black text-poolCyan uppercase tracking-widest">Central de Contato</h4>
             <div className="space-y-2.5 text-xs text-slate-200 font-bold">
               <p className="flex items-center gap-2">
                 <Phone className="w-4 h-4 text-poolCyan" />

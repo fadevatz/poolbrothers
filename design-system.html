@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pool Brothers — Design System & Guia de Estilo Visuais</title>
+  
+  <!-- Google Fonts: Cormorant Garamond, Inter, Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600;1,700&family=Inter:wght@400;500;600;700;800;900&family=Lato:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            flagBlue: {
+              DEFAULT: '#003B73',
+              dark: '#00254A',
+              light: '#00529E',
+              hover: '#002D59',
+            },
+            poolCyan: {
+              DEFAULT: '#00D2D2',
+              light: '#33E0E0',
+              dark: '#00A3A3',
+              hover: '#00B8B8',
+            },
+            stripedRed: {
+              DEFAULT: '#C8102E',
+              dark: '#9E0B22',
+              light: '#E02444',
+            },
+            brightWhite: '#FFFFFF',
+            pbIce: '#F4F8FA',
+            pbDark: '#0A1728',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Lato', 'sans-serif'],
+            display: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            serif: ['"Cormorant Garamond"', 'Georgia', 'serif'],
+          },
+          boxShadow: {
+            'glow-blue': '0 0 25px rgba(0, 59, 115, 0.35)',
+            'glow-cyan': '0 0 25px rgba(0, 210, 210, 0.4)',
+            'glow-red': '0 0 25px rgba(200, 16, 46, 0.35)',
+            'pb-card': '0 10px 30px -10px rgba(0, 59, 115, 0.08)',
+            'pb-hover': '0 20px 40px -10px rgba(0, 59, 115, 0.15)',
+          }
+        }
+      }
+    }
+  </script>
+  
+  <style>
+    /* Custom Utilities & Components matching index.css */
+    body {
+      font-family: 'Inter', 'Lato', sans-serif;
+      background-color: #F4F8FA;
+      color: #0A1728;
+    }
+    .font-display {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+    }
+    .btn-primary-pb {
+      background-color: #003B73;
+      color: #FFFFFF;
+      font-weight: 700;
+      border-radius: 12px;
+      padding: 0.875rem 1.75rem;
+      box-shadow: 0 10px 20px -5px rgba(0, 59, 115, 0.3);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-primary-pb:hover {
+      background-color: #002D59;
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(0, 59, 115, 0.4);
+    }
+    .btn-secondary-pb {
+      background-color: #00D2D2;
+      color: #00254A;
+      font-weight: 900;
+      border-radius: 12px;
+      padding: 0.875rem 1.75rem;
+      box-shadow: 0 10px 20px -5px rgba(0, 210, 210, 0.35);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-secondary-pb:hover {
+      background-color: #00B8B8;
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(0, 210, 210, 0.5);
+    }
+    .btn-red-pb {
+      background-color: #C8102E;
+      color: #FFFFFF;
+      font-weight: 700;
+      border-radius: 12px;
+      padding: 0.875rem 1.75rem;
+      box-shadow: 0 10px 20px -5px rgba(200, 16, 46, 0.35);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .btn-red-pb:hover {
+      background-color: #9E0B22;
+      transform: translateY(-2px);
+      box-shadow: 0 15px 30px -5px rgba(200, 16, 46, 0.5);
+    }
+    .card-pb {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      box-shadow: 0 10px 30px -10px rgba(0, 59, 115, 0.08);
+      transition: all 0.3s ease;
+    }
+    .card-pb:hover {
+      border-color: rgba(0, 210, 210, 0.5);
+      box-shadow: 0 20px 40px -10px rgba(0, 59, 115, 0.15);
+      transform: translateY(-4px);
+    }
+    .input-pb {
+      width: 100%;
+      background-color: #FFFFFF;
+      border: 2px solid rgba(0, 59, 115, 0.2);
+      border-radius: 12px;
+      padding: 0.875rem 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #0A1728;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .input-pb:focus {
+      border-color: #003B73;
+      box-shadow: 0 0 0 3px rgba(0, 59, 115, 0.15);
+    }
+    .toast {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      background: #00254A;
+      color: #00D2D2;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 0.875rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      opacity: 0;
+      transform: translateY(1rem);
+      transition: all 0.3s ease;
+      pointer-events: none;
+      z-index: 100;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="min-h-screen pb-24">
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">
+    <svg class="w-5 h-5 text-poolCyan" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+    </svg>
+    <span id="toast-text">Copiado para a área de transferência!</span>
+  </div>
+
+  <!-- Header Sticky Nav -->
+  <header class="sticky top-0 z-50 bg-flagBlue-dark/95 backdrop-blur-md border-b border-flagBlue-light/20 text-white py-4 shadow-xl">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      
+      <!-- Brand Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-flagBlue border-2 border-poolCyan flex items-center justify-center shadow-glow-cyan">
+          <!-- USA Wave Motif -->
+          <svg class="w-6 h-6" viewBox="0 0 24 14" fill="none">
+            <path d="M2 4C5 1 9 1 12 4C15 7 19 7 22 4" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M2 7C5 3 9 3 12 7C15 11 19 11 22 7" stroke="#C8102E" stroke-width="2.5" stroke-linecap="round" />
+            <path d="M2 10C5 6 9 6 12 10C15 14 19 14 22 10" stroke="#00D2D2" stroke-width="2.5" stroke-linecap="round" />
+          </svg>
+        </div>
+        <div>
+          <span class="font-display text-2xl font-bold text-white tracking-wide block leading-none">POOL BROTHERS</span>
+          <span class="text-[10px] tracking-widest text-poolCyan font-bold uppercase block mt-0.5">Design System Specification</span>
+        </div>
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="hidden md:flex items-center gap-6 text-xs font-bold uppercase tracking-wider text-slate-300">
+        <a href="#overview" class="hover:text-poolCyan transition-colors">Visão Geral</a>
+        <a href="#colors" class="hover:text-poolCyan transition-colors">Cores</a>
+        <a href="#typography" class="hover:text-poolCyan transition-colors">Tipografia</a>
+        <a href="#elevation" class="hover:text-poolCyan transition-colors">Sombras</a>
+        <a href="#components" class="hover:text-poolCyan transition-colors">Componentes</a>
+        <a href="#rules" class="hover:text-poolCyan transition-colors">Regras de Design</a>
+      </nav>
+
+      <!-- Badge -->
+      <span class="px-3 py-1 rounded-full bg-stripedRed/20 border border-stripedRed text-white text-xs font-extrabold uppercase tracking-wider">
+        v2.0 Spec
+      </span>
+    </div>
+  </header>
+
+  <!-- Hero Banner -->
+  <section id="overview" class="bg-gradient-to-b from-flagBlue-dark via-flagBlue to-pbIce text-white pt-16 pb-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto text-center space-y-6">
+      
+      <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-poolCyan/10 border border-poolCyan/30 text-poolCyan text-xs font-black uppercase tracking-widest">
+        <span>Scrutinized Design Tokens & Components</span>
+      </div>
+
+      <h1 class="font-display text-5xl sm:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+        The Sculpted Crystal <span class="text-poolCyan italic font-normal">Sanctuary</span>
+      </h1>
+
+      <p class="max-w-3xl mx-auto text-slate-200 text-lg font-normal leading-relaxed">
+        Guia oficial do sistema visual da <strong>Pool Brothers</strong>. Combina a autoridade da engenharia norte-americana (Azul Bandeira) com a sofisticação da água cristalina de luxo (Ciano Cristalino) e selos de prestígio em Vermelho Bandeira.
+      </p>
+
+      <!-- Quick Metrics -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto pt-6 text-left">
+        <div class="p-4 rounded-xl bg-white/10 backdrop-blur border border-white/15">
+          <span class="text-xs uppercase text-poolCyan font-bold tracking-wider block">Cor Primária</span>
+          <span class="text-xl font-bold font-mono text-white">#003B73</span>
+          <span class="text-[11px] text-slate-300 block">Flag Blue (Autoridade)</span>
+        </div>
+        <div class="p-4 rounded-xl bg-white/10 backdrop-blur border border-white/15">
+          <span class="text-xs uppercase text-poolCyan font-bold tracking-wider block">Cor Secundária</span>
+          <span class="text-xl font-bold font-mono text-white">#00D2D2</span>
+          <span class="text-[11px] text-slate-300 block">Pool Cyan (Água Cristalina)</span>
+        </div>
+        <div class="p-4 rounded-xl bg-white/10 backdrop-blur border border-white/15">
+          <span class="text-xs uppercase text-poolCyan font-bold tracking-wider block">Cor de Acento</span>
+          <span class="text-xl font-bold font-mono text-white">#C8102E</span>
+          <span class="text-[11px] text-slate-300 block">Striped Red (Garantia EUA)</span>
+        </div>
+        <div class="p-4 rounded-xl bg-white/10 backdrop-blur border border-white/15">
+          <span class="text-xs uppercase text-poolCyan font-bold tracking-wider block">Fonte Display</span>
+          <span class="text-xl font-bold font-display text-white">Cormorant Garamond</span>
+          <span class="text-[11px] text-slate-300 block">Serifada de Luxo</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Container Principal -->
+  <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20 -mt-8">
+
+    <!-- SEÇÃO 1: PALETA DE CORES -->
+    <section id="colors" class="card-pb p-8 sm:p-10 space-y-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between border-b border-slate-200 pb-6 gap-4">
+        <div>
+          <span class="text-xs font-black uppercase tracking-widest text-flagBlue font-mono">01. Sistema de Cores</span>
+          <h2 class="font-display text-4xl font-bold text-flagBlue mt-1">Paleta Visual & Swatches</h2>
+        </div>
+        <p class="text-slate-500 text-sm max-w-md">
+          Clique em qualquer bloco de cor para copiar o código hexadecimal para a área de transferência.
+        </p>
+      </div>
+
+      <!-- Colors Grid -->
+      <div class="space-y-8">
+        
+        <!-- 1.1 Cores Primárias -->
+        <div>
+          <h3 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Cores Primárias (Flag Blue — Autoridade & Estrutura)</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            
+            <div onclick="copyToClipboard('#003B73', 'Hex #003B73')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-flagBlue transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#003B73] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-white bg-black/30 px-2 py-0.5 rounded">Default</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue group-hover:text-poolCyan-dark">Flag Blue</h4>
+              <p class="text-xs text-slate-500 font-mono">#003B73 | bg-flagBlue</p>
+            </div>
+
+            <div onclick="copyToClipboard('#00254A', 'Hex #00254A')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-flagBlue transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#00254A] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-white bg-black/30 px-2 py-0.5 rounded">Dark</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue group-hover:text-poolCyan-dark">Flag Blue Dark</h4>
+              <p class="text-xs text-slate-500 font-mono">#00254A | bg-flagBlue-dark</p>
+            </div>
+
+            <div onclick="copyToClipboard('#00529E', 'Hex #00529E')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-flagBlue transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#00529E] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-white bg-black/30 px-2 py-0.5 rounded">Light</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue group-hover:text-poolCyan-dark">Flag Blue Light</h4>
+              <p class="text-xs text-slate-500 font-mono">#00529E | bg-flagBlue-light</p>
+            </div>
+
+            <div onclick="copyToClipboard('#002D59', 'Hex #002D59')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-flagBlue transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#002D59] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-white bg-black/30 px-2 py-0.5 rounded">Hover</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue group-hover:text-poolCyan-dark">Flag Blue Hover</h4>
+              <p class="text-xs text-slate-500 font-mono">#002D59 | bg-flagBlue-hover</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 1.2 Cores Secundárias -->
+        <div>
+          <h3 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Cores Secundárias (Pool Cyan — Destaques & Ação Cristalina)</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            
+            <div onclick="copyToClipboard('#00D2D2', 'Hex #00D2D2')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-poolCyan transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#00D2D2] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-flagBlue bg-white/60 px-2 py-0.5 rounded">Default</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue group-hover:text-poolCyan-dark">Pool Cyan</h4>
+              <p class="text-xs text-slate-500 font-mono">#00D2D2 | bg-poolCyan</p>
+            </div>
+
+            <div onclick="copyToClipboard('#33E0E0', 'Hex #33E0E0')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-poolCyan transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#33E0E0] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-flagBlue bg-white/60 px-2 py-0.5 rounded">Light</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue group-hover:text-poolCyan-dark">Pool Cyan Light</h4>
+              <p class="text-xs text-slate-500 font-mono">#33E0E0 | bg-poolCyan-light</p>
+            </div>
+
+            <div onclick="copyToClipboard('#00A3A3', 'Hex #00A3A3')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-poolCyan transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#00A3A3] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-white bg-black/30 px-2 py-0.5 rounded">Dark</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue group-hover:text-poolCyan-dark">Pool Cyan Dark</h4>
+              <p class="text-xs text-slate-500 font-mono">#00A3A3 | bg-poolCyan-dark</p>
+            </div>
+
+            <div onclick="copyToClipboard('#00B8B8', 'Hex #00B8B8')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-poolCyan transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#00B8B8] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-flagBlue bg-white/60 px-2 py-0.5 rounded">Hover</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue group-hover:text-poolCyan-dark">Pool Cyan Hover</h4>
+              <p class="text-xs text-slate-500 font-mono">#00B8B8 | bg-poolCyan-hover</p>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- 1.3 Acento & Neutros -->
+        <div>
+          <h3 class="text-xs font-black uppercase tracking-widest text-slate-400 mb-4">Cores de Acento & Neutros de Superfície</h3>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4">
+            
+            <div onclick="copyToClipboard('#C8102E', 'Hex #C8102E')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 hover:border-stripedRed transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#C8102E] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-white bg-black/30 px-2 py-0.5 rounded">Accent</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue">Striped Red</h4>
+              <p class="text-xs text-slate-500 font-mono">#C8102E | bg-stripedRed</p>
+            </div>
+
+            <div onclick="copyToClipboard('#F4F8FA', 'Hex #F4F8FA')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#F4F8FA] border border-slate-300 shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-slate-700 bg-white/80 px-2 py-0.5 rounded">Bg</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue">Ice Background</h4>
+              <p class="text-xs text-slate-500 font-mono">#F4F8FA | bg-pbIce</p>
+            </div>
+
+            <div onclick="copyToClipboard('#FFFFFF', 'Hex #FFFFFF')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#FFFFFF] border border-slate-300 shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded">Surface</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue">Bright White</h4>
+              <p class="text-xs text-slate-500 font-mono">#FFFFFF | bg-brightWhite</p>
+            </div>
+
+            <div onclick="copyToClipboard('#0A1728', 'Hex #0A1728')" class="group cursor-pointer p-4 rounded-xl bg-white border border-slate-200 transition-all shadow-sm">
+              <div class="h-24 rounded-lg bg-[#0A1728] shadow-inner mb-3 flex items-end p-2 justify-end">
+                <span class="text-xs font-mono font-bold text-white bg-white/20 px-2 py-0.5 rounded">Dark Text</span>
+              </div>
+              <h4 class="font-bold text-sm text-flagBlue">Deep Navy Dark</h4>
+              <p class="text-xs text-slate-500 font-mono">#0A1728 | bg-pbDark</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 2: TIPOGRAFIA -->
+    <section id="typography" class="card-pb p-8 sm:p-10 space-y-8">
+      <div class="border-b border-slate-200 pb-6">
+        <span class="text-xs font-black uppercase tracking-widest text-flagBlue font-mono">02. Hierarquia Tipográfica</span>
+        <h2 class="font-display text-4xl font-bold text-flagBlue mt-1">Fontes & Escalas de Texto</h2>
+      </div>
+
+      <div class="space-y-8">
+        
+        <!-- Display Header Sample -->
+        <div class="p-6 rounded-2xl bg-pbIce border border-slate-200 space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block font-mono">Display H1 (Cormorant Garamond, Bold 700)</span>
+          <p class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-flagBlue leading-tight">
+            O Autêntico Método Americano de <span class="text-poolCyan-dark italic font-normal">Piscinas de Luxo</span>
+          </p>
+          <div class="flex items-center gap-4 text-xs font-mono text-slate-500 pt-2 border-t border-slate-200/60">
+            <span>Font: Cormorant Garamond</span>
+            <span>Weight: 700 / 400 (italic)</span>
+            <span>Size: clamp(2.5rem, 5vw, 4rem)</span>
+          </div>
+        </div>
+
+        <!-- Headline Sample -->
+        <div class="p-6 rounded-2xl bg-pbIce border border-slate-200 space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block font-mono">Headline H2 (Cormorant Garamond, Bold 700)</span>
+          <p class="font-display text-3xl sm:text-4xl font-bold text-flagBlue">
+            Engenharia Monolítica sem Rejunte e com Aplicação Rápida
+          </p>
+          <div class="flex items-center gap-4 text-xs font-mono text-slate-500 pt-2 border-t border-slate-200/60">
+            <span>Font: Cormorant Garamond</span>
+            <span>Weight: 700</span>
+            <span>Size: clamp(1.75rem, 3.5vw, 2.5rem)</span>
+          </div>
+        </div>
+
+        <!-- Title Sample -->
+        <div class="p-6 rounded-2xl bg-pbIce border border-slate-200 space-y-2">
+          <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block font-mono">Title H3 (Inter / Lato, Bold 700)</span>
+          <p class="text-xl font-bold text-flagBlue">
+            Acabamento Quartz Plaster Importado diretamente dos EUA
+          </p>
+          <div class="flex items-center gap-4 text-xs font-mono text-slate-500 pt-2 border-t border-slate-200/60">
+            <span>Font: Inter</span>
+            <span>Weight: 700</span>
+            <span>Size: 1.25rem (20px)</span>
+          </div>
+        </div>
+
+        <!-- Body & Label Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <div class="p-6 rounded-2xl bg-pbIce border border-slate-200 space-y-2">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block font-mono">Body Text (Inter, Regular 400/500)</span>
+            <p class="text-slate-600 text-base leading-relaxed font-normal">
+              Revolucionamos o mercado brasileiro trazendo a tecnologia de revestimento mineral contínuo em Plaster de quartzo. Sem placas de azulejo, sem trincas e com garantia de fábrica.
+            </p>
+            <div class="flex items-center gap-4 text-xs font-mono text-slate-500 pt-2 border-t border-slate-200/60">
+              <span>Size: 1rem (16px)</span>
+              <span>Line-height: 1.625</span>
+            </div>
+          </div>
+
+          <div class="p-6 rounded-2xl bg-pbIce border border-slate-200 space-y-2">
+            <span class="text-xs font-bold uppercase tracking-widest text-slate-400 block font-mono">Label / Tag (Inter, Bold 700 Uppercase)</span>
+            <p class="text-xs font-black text-flagBlue uppercase tracking-widest font-mono">
+              ★ GARANTIA EXCLUSIVA POOL BROTHERS • CERTIFICAÇÃO EUA
+            </p>
+            <div class="flex items-center gap-4 text-xs font-mono text-slate-500 pt-2 border-t border-slate-200/60">
+              <span>Size: 0.75rem (12px)</span>
+              <span>Tracking: 0.05em (wider)</span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 3: ELEVAÇÃO & SOMBRAS -->
+    <section id="elevation" class="card-pb p-8 sm:p-10 space-y-8">
+      <div class="border-b border-slate-200 pb-6">
+        <span class="text-xs font-black uppercase tracking-widest text-flagBlue font-mono">03. Profundidade & Sombras</span>
+        <h2 class="font-display text-4xl font-bold text-flagBlue mt-1">Vocabulário de Sombras & Glows</h2>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        
+        <!-- Card Default Shadow -->
+        <div class="p-6 rounded-2xl bg-white border border-slate-200 shadow-pb-card text-center space-y-2">
+          <div class="w-12 h-12 rounded-full bg-flagBlue/10 mx-auto flex items-center justify-center text-flagBlue font-bold text-xs">
+            01
+          </div>
+          <h4 class="font-bold text-sm text-flagBlue">Card Default Shadow</h4>
+          <p class="text-xs text-slate-500">Elevação em repouso</p>
+          <code class="text-[10px] bg-slate-100 p-1.5 rounded block text-slate-600 font-mono mt-2">shadow-pb-card</code>
+        </div>
+
+        <!-- Card Hover Shadow -->
+        <div class="p-6 rounded-2xl bg-white border border-poolCyan/50 shadow-pb-hover text-center space-y-2">
+          <div class="w-12 h-12 rounded-full bg-poolCyan/20 mx-auto flex items-center justify-center text-flagBlue-dark font-bold text-xs">
+            02
+          </div>
+          <h4 class="font-bold text-sm text-flagBlue">Card Hover Shadow</h4>
+          <p class="text-xs text-slate-500">Elevação em interação</p>
+          <code class="text-[10px] bg-slate-100 p-1.5 rounded block text-slate-600 font-mono mt-2">shadow-pb-hover</code>
+        </div>
+
+        <!-- Blue Glow -->
+        <div class="p-6 rounded-2xl bg-flagBlue text-white shadow-glow-blue text-center space-y-2">
+          <div class="w-12 h-12 rounded-full bg-white/20 mx-auto flex items-center justify-center font-bold text-xs">
+            03
+          </div>
+          <h4 class="font-bold text-sm text-white">Flag Blue Glow</h4>
+          <p class="text-xs text-slate-200">Brilho sob CTAs primários</p>
+          <code class="text-[10px] bg-black/30 p-1.5 rounded block text-poolCyan font-mono mt-2">shadow-glow-blue</code>
+        </div>
+
+        <!-- Cyan Glow -->
+        <div class="p-6 rounded-2xl bg-poolCyan text-flagBlue-dark shadow-glow-cyan text-center space-y-2">
+          <div class="w-12 h-12 rounded-full bg-flagBlue/20 mx-auto flex items-center justify-center font-bold text-xs">
+            04
+          </div>
+          <h4 class="font-bold text-sm text-flagBlue-dark">Pool Cyan Glow</h4>
+          <p class="text-xs text-slate-800">Brilho de destaque aquático</p>
+          <code class="text-[10px] bg-white/50 p-1.5 rounded block text-flagBlue-dark font-mono mt-2">shadow-glow-cyan</code>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SEÇÃO 4: COMPONENTES DE INTERFACE -->
+    <section id="components" class="card-pb p-8 sm:p-10 space-y-12">
+      <div class="border-b border-slate-200 pb-6">
+        <span class="text-xs font-black uppercase tracking-widest text-flagBlue font-mono">04. Biblioteca de Componentes</span>
+        <h2 class="font-display text-4xl font-bold text-flagBlue mt-1">Botões, Inputs, Cards & Badges</h2>
+      </div>
+
+      <!-- 4.1 Botões -->
+      <div class="space-y-4">
+        <h3 class="text-xs font-black uppercase tracking-widest text-slate-400">4.1 Estilos de Botões (.btn-*-pb)</h3>
+        <div class="flex flex-wrap items-center gap-4 p-6 bg-pbIce rounded-2xl border border-slate-200">
+          
+          <button class="btn-primary-pb">
+            <span>Solicitar Orçamento VIP</span>
+            <svg width="18" height="12" viewBox="0 0 24 14" fill="none">
+              <path d="M2 7C5 3 9 3 12 7C15 11 19 11 22 7" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
+              <path d="M2 11C5 7 9 7 12 11C15 15 19 15 22 11" stroke="#00D2D2" stroke-width="2.5" stroke-linecap="round" />
+            </svg>
+          </button>
+
+          <button class="btn-secondary-pb">
+            <svg class="w-5 h-5 text-flagBlue-dark" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654z"/>
+            </svg>
+            <span>WhatsApp Direto</span>
+          </button>
+
+          <button class="btn-red-pb">
+            <span>Garantia Exclusiva 10 Anos</span>
+          </button>
+
+          <button disabled class="px-6 py-3.5 rounded-xl bg-slate-200 text-slate-400 font-bold text-sm cursor-not-allowed">
+            Desabilitado
+          </button>
+
+        </div>
+      </div>
+
+      <!-- 4.2 Badges & Tags -->
+      <div class="space-y-4">
+        <h3 class="text-xs font-black uppercase tracking-widest text-slate-400">4.2 Badges & Tags Informativas</h3>
+        <div class="flex flex-wrap items-center gap-3 p-6 bg-pbIce rounded-2xl border border-slate-200">
+          
+          <span class="px-3.5 py-1.5 rounded-full bg-flagBlue/10 border border-flagBlue/20 text-flagBlue text-xs font-black uppercase tracking-widest">
+            Método Autêntico EUA
+          </span>
+
+          <span class="px-3.5 py-1.5 rounded-full bg-poolCyan/20 border border-poolCyan text-flagBlue-dark text-xs font-black uppercase tracking-widest">
+            Sem Rejunte / Sem Placas
+          </span>
+
+          <span class="px-3.5 py-1.5 rounded-full bg-stripedRed text-white text-xs font-bold uppercase tracking-wider shadow">
+            Aplicação em 1 Dia
+          </span>
+
+          <span class="px-3.5 py-1.5 rounded-full bg-slate-900 text-poolCyan text-xs font-mono font-bold uppercase tracking-widest">
+            100% Maquinário Importado
+          </span>
+
+        </div>
+      </div>
+
+      <!-- 4.3 Formulários & Inputs -->
+      <div class="space-y-4">
+        <h3 class="text-xs font-black uppercase tracking-widest text-slate-400">4.3 Campos de Formulário (.input-pb)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 bg-pbIce rounded-2xl border border-slate-200">
+          
+          <div>
+            <label class="block text-xs font-black text-flagBlue uppercase mb-2">Seu Nome Completo</label>
+            <input type="text" placeholder="Ex: Rodrigo Albuquerque" class="input-pb">
+          </div>
+
+          <div>
+            <label class="block text-xs font-black text-flagBlue uppercase mb-2">Interesse Principal</label>
+            <select class="input-pb">
+              <option>Construção de Piscina Nova (Método EUA)</option>
+              <option>Reforma / Revestimento em Plaster</option>
+              <option>Espaço Arquitetos / Parceria</option>
+            </select>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- 4.4 Exemplo de Card de Serviço -->
+      <div class="space-y-4">
+        <h3 class="text-xs font-black uppercase tracking-widest text-slate-400">4.4 Card de Componente Interativo (.card-pb)</h3>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="card-pb p-6 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-flagBlue/10 text-flagBlue flex items-center justify-center font-bold">
+              01
+            </div>
+            <h4 class="font-display text-2xl font-bold text-flagBlue">Plaster de Quartzo</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Acabamento mineral homogêneo, toque aveludado e durabilidade extrema. Desenvolvido para resistir a intempéries sem soltar pastilhas.
+            </p>
+            <a href="#" class="text-xs font-black text-poolCyan-dark uppercase tracking-widest hover:underline block pt-2">Saiba Mais →</a>
+          </div>
+
+          <div class="card-pb p-6 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-poolCyan/20 text-flagBlue-dark flex items-center justify-center font-bold">
+              02
+            </div>
+            <h4 class="font-display text-2xl font-bold text-flagBlue">Aplicação Monolítica</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Elimina o rejunte tradicional. Aplicação contínua que evita o acúmulo de sujeiras e fungos nas juntas da piscina.
+            </p>
+            <a href="#" class="text-xs font-black text-poolCyan-dark uppercase tracking-widest hover:underline block pt-2">Saiba Mais →</a>
+          </div>
+
+          <div class="card-pb p-6 space-y-4">
+            <div class="w-12 h-12 rounded-xl bg-stripedRed/10 text-stripedRed flex items-center justify-center font-bold">
+              03
+            </div>
+            <h4 class="font-display text-2xl font-bold text-flagBlue">Execução em 1 Dia</h4>
+            <p class="text-slate-600 text-sm leading-relaxed">
+              Nossa equipe especializada realiza o revestimento completo em tempo recorde utilizando maquinário de alta pressão trazido dos EUA.
+            </p>
+            <a href="#" class="text-xs font-black text-poolCyan-dark uppercase tracking-widest hover:underline block pt-2">Saiba Mais →</a>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- SEÇÃO 5: REGRAS E DIRETRIZES DE DESIGN -->
+    <section id="rules" class="card-pb p-8 sm:p-10 space-y-8">
+      <div class="border-b border-slate-200 pb-6">
+        <span class="text-xs font-black uppercase tracking-widest text-flagBlue font-mono">05. Diretrizes & Regras Únicas</span>
+        <h2 class="font-display text-4xl font-bold text-flagBlue mt-1">Regras de Ouro do Sistema Visual</h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <div class="p-6 rounded-2xl bg-flagBlue/5 border border-flagBlue/20 space-y-3">
+          <div class="inline-block p-2 rounded-lg bg-flagBlue text-poolCyan font-mono font-bold text-xs">Rule #1</div>
+          <h4 class="font-bold text-flagBlue text-lg">The Crystal Highlight Rule</h4>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            O tom Ciano (<code>#00D2D2</code>) não deve ultrapassar <strong>15% da área visual</strong> de qualquer tela. Seu uso é exclusivo para chamar a atenção do usuário para conversões e dados prioritários.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-flagBlue/5 border border-flagBlue/20 space-y-3">
+          <div class="inline-block p-2 rounded-lg bg-flagBlue text-poolCyan font-mono font-bold text-xs">Rule #2</div>
+          <h4 class="font-bold text-flagBlue text-lg">The Contrast Authority Rule</h4>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Títulos em Azul Bandeira (<code>#003B73</code>) devem sempre utilizar peso elevado (<code>700</code> ou <code>900</code>) garantindo solidez, peso e autoridade corporativa sobre fundos claros.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-flagBlue/5 border border-flagBlue/20 space-y-3">
+          <div class="inline-block p-2 rounded-lg bg-flagBlue text-poolCyan font-mono font-bold text-xs">Rule #3</div>
+          <h4 class="font-bold text-flagBlue text-lg">The Responsive Depth Rule</h4>
+          <p class="text-slate-600 text-xs leading-relaxed">
+            Cards e containers permanecem sutis e planos no estado inicial. A profundidade tridimensional máxima (glows e sombras projetadas) ativa-se mediante interação do usuário.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Checklist Do's and Don'ts -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+        
+        <div class="p-6 rounded-2xl bg-emerald-50 border border-emerald-200 space-y-3">
+          <h4 class="font-bold text-emerald-800 text-sm flex items-center gap-2">
+            <svg class="w-5 h-5 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            DO (Recomendado)
+          </h4>
+          <ul class="text-xs text-emerald-900 space-y-2 list-disc list-inside">
+            <li>Manter a hierarquia com Flag Blue no comando e Pool Cyan no foco.</li>
+            <li>Usar raios de curvatura de 12px em botões e 16px em cards.</li>
+            <li>Utilizar transição suave <code>translateY(-2px)</code> nos botões.</li>
+            <li>Usar o fundo gélido <code>#F4F8FA</code> para manter o frescor aquático.</li>
+          </ul>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-rose-50 border border-rose-200 space-y-3">
+          <h4 class="font-bold text-rose-800 text-sm flex items-center gap-2">
+            <svg class="w-5 h-5 text-rose-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+            DON'T (Evitar)
+          </h4>
+          <ul class="text-xs text-rose-900 space-y-2 list-disc list-inside">
+            <li>Não usar fundos cinzas puros e opacos; prefira a tonalidade gélida.</li>
+            <li>Não usar o vermelho <code>#C8102E</code> em botões comuns; reserve para selos de garantia e urgência.</li>
+            <li>Não misturar mais de duas famílias tipográficas no mesmo bloco.</li>
+            <li>Não remover os estados de focus e hover dos elementos interativos.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-20 border-t border-slate-200 bg-flagBlue-dark text-white py-10 text-center text-xs">
+    <div class="max-w-7xl mx-auto px-4 space-y-2">
+      <p class="font-bold text-slate-300">Pool Brothers © 2026 — O Autêntico Método Americano de Piscinas de Luxo</p>
+      <p class="text-slate-400 font-mono text-[11px]">Design System Specification Document • Standalone Preview Page</p>
+    </div>
+  </footer>
+
+  <!-- Script Interativo (Copy to Clipboard) -->
+  <script>
+    function copyToClipboard(text, label) {
+      navigator.clipboard.writeText(text).then(() => {
+        const toast = document.getElementById('toast');
+        const toastText = document.getElementById('toast-text');
+        toastText.innerText = label + ' copiado!';
+        toast.classList.add('show');
+        setTimeout(() => {
+          toast.classList.remove('show');
+        }, 2200);
+      }).catch(err => {
+        console.error('Erro ao copiar: ', err);
+      });
+    }
+  </script>
+
+</body>
+</html>

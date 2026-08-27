@@ -25,12 +25,6 @@ export default function LeadForm() {
           
           {/* Left Column Text & Contact Details */}
           <div className="lg:col-span-5 space-y-6 text-left">
-            
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-flagBlue/10 border border-flagBlue/20 text-flagBlue text-xs font-black uppercase tracking-widest">
-              <Sparkles className="w-4 h-4 text-poolCyan-dark" />
-              Atendimento VIP & Orçamento
-            </div>
-
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-flagBlue leading-tight tracking-tight">
               Transforme a sua <span className="text-poolCyan-dark italic font-normal">Piscina Hoje.</span>
             </h2>
@@ -46,7 +40,7 @@ export default function LeadForm() {
                 </div>
                 <div>
                   <h4 className="text-xs font-black text-slate-500 uppercase">Regiões Atendidas</h4>
-                  <p className="text-sm font-black text-flagBlue">São Paulo (SP) & Paraná (Londrina, Maringá, Porto Rico)</p>
+                  <p className="text-sm font-black text-flagBlue">São Paulo & Paraná</p>
                 </div>
               </div>
 
@@ -55,8 +49,8 @@ export default function LeadForm() {
                   <ShieldCheck className="w-6 h-6 text-white" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-black text-slate-500 uppercase">Garantia & Confiança</h4>
-                  <p className="text-sm font-black text-flagBlue">Maquinário e Mão de Obra 100% Importados dos EUA</p>
+                  <h4 className="text-xs font-black text-slate-500 uppercase">Garantia & Excelência</h4>
+                  <p className="text-sm font-black text-flagBlue">Tecnologia Americana e Acabamento de Alta Durabilidade</p>
                 </div>
               </div>
             </div>
@@ -102,11 +96,11 @@ export default function LeadForm() {
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-xs font-black text-flagBlue uppercase mb-1">Cidade / Condomínio</label>
+                        <label className="block text-xs font-black text-flagBlue uppercase mb-1">Cidade</label>
                         <input
                           type="text"
                           required
-                          placeholder="Ex: Alphaville / Londrina"
+                          placeholder="Ex: São Paulo"
                           value={formData.cidade}
                           onChange={e => setFormData({...formData, cidade: e.target.value})}
                           className="input-pb"
@@ -142,7 +136,7 @@ export default function LeadForm() {
                       type="submit"
                       className="btn-primary-pb w-full text-center py-4 min-h-[44px] justify-center"
                     >
-                      Enviar Solicitação VIP
+                      Enviar Solicitação
                     </button>
                   </form>
                 </>

@@ -52,7 +52,7 @@ export default function Hero() {
               href="#contato"
               className="btn-primary-pb w-full sm:w-auto justify-center min-h-[44px]"
             >
-              <span>Solicitar Orçamento VIP</span>
+              <span>Solicitar Orçamento</span>
               <svg width="18" height="12" viewBox="0 0 24 14" fill="none">
                 <path d="M2 7C5 3 9 3 12 7C15 11 19 11 22 7" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
                 <path d="M2 11C5 7 9 7 12 11C15 15 19 15 22 11" stroke="#00D2D2" strokeWidth="2.5" strokeLinecap="round" />
