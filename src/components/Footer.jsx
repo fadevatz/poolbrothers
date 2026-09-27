@@ -40,9 +40,12 @@ export default function Footer() {
             <h4 className="text-xs font-black text-poolCyan uppercase tracking-widest">Navegação</h4>
             <ul className="space-y-2 text-xs text-slate-300 font-bold">
               <li><a href="#quem-somos" className="hover:text-poolCyan transition-colors">Quem Somos</a></li>
+              <li><a href="#diferenciais" className="hover:text-poolCyan transition-colors">Diferenciais</a></li>
               <li><a href="#metodo" className="hover:text-poolCyan transition-colors">O Método Americano</a></li>
               <li><a href="#servicos" className="hover:text-poolCyan transition-colors">Serviços Premium</a></li>
+              <li><a href="#cores" className="hover:text-poolCyan transition-colors">Catálogo de Cores</a></li>
               <li><a href="#galeria" className="hover:text-poolCyan transition-colors">Galeria de Fotos</a></li>
+              <li><a href="#arquitetos" className="hover:text-poolCyan transition-colors">Espaço Arquitetos</a></li>
               <li><a href="#contato" className="hover:text-poolCyan transition-colors">Contato & Orçamento</a></li>
             </ul>
           </div>
