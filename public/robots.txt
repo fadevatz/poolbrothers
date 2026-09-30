@@ -1,0 +1,6 @@
+# robots.txt para Pool Brothers
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://www.brotherspoolbrasil.com.br/sitemap.xml

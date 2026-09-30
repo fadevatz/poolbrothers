@@ -60,7 +60,7 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-2">
                 <Mail className="w-4 h-4 text-poolCyan" />
-                <span>contato@poolbrothers.com.br</span>
+                <span>contato@brotherspoolbrasil.com.br</span>
               </p>
             </div>
           </div>
