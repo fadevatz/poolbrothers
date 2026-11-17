@@ -16,7 +16,7 @@ Proprietários de residências, casas e mansões de alto padrão (público B2C) 
 
 ## Product Purpose
 
-Landing page premium de alta conversão projetada para apresentar o Método Americano de Piscinas de Luxo da Pool Brothers, demonstrar autoridade no mercado e converter visitantes em leads qualificados.
+Landing page premium de alta conversão projetada para apresentar o Método Americano de Piscinas de Luxo da Brothers Pool Brasil, demonstrar autoridade no mercado e converter visitantes em leads qualificados.
 
 ## Positioning
 
@@ -35,7 +35,7 @@ Acesso via navegação web (desktop e mobile) por proprietários de mansões e r
 
 ## Brand Commitments
 
-- Nome: Pool Brothers
+- Nome: Brothers Pool Brasil
 - Assinatura: O Autêntico Método Americano de Piscinas de Luxo | 100% Tecnologia EUA
 - Pilar Principal: Maquinário pneumático importado dos EUA + Profissionais com +25 Anos de atuação nos EUA.
 - Tom de Voz: Sofisticado, hiper-confiável, soberano e exclusivo.

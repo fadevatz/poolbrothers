@@ -20,7 +20,7 @@ export default function Hero() {
           {/* Fallback Image */}
           <img
             src="/images/hero_pool.png"
-            alt="Piscina de Luxo Método Americano Pool Brothers"
+            alt="Piscina de Luxo Método Americano Brothers Pool Brasil"
             className="w-full h-full object-cover object-center filter brightness-[0.85]"
           />
         </video>
@@ -61,7 +61,7 @@ export default function Hero() {
 
             {/* Secondary Button Pool Cyan (#00D2D2) */}
             <a
-              href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20Pool%20Brothers."
+              href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20falar%20com%20um%20especialista%20da%20Brothers%20Pool%20Brasil."
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary-pb w-full sm:w-auto justify-center min-h-[44px]"

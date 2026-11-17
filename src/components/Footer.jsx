@@ -28,7 +28,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center text-white hover:text-poolCyan hover:bg-white/20 transition-colors border border-white/10 shadow"
-                aria-label="Instagram Pool Brothers"
+                aria-label="Instagram Brothers Pool Brasil"
               >
                 <Instagram className="w-5 h-5" />
               </a>
@@ -43,9 +43,7 @@ export default function Footer() {
               <li><a href="#diferenciais" className="hover:text-poolCyan transition-colors">Diferenciais</a></li>
               <li><a href="#metodo" className="hover:text-poolCyan transition-colors">O Método Americano</a></li>
               <li><a href="#servicos" className="hover:text-poolCyan transition-colors">Serviços Premium</a></li>
-              <li><a href="#cores" className="hover:text-poolCyan transition-colors">Catálogo de Cores</a></li>
               <li><a href="#galeria" className="hover:text-poolCyan transition-colors">Galeria de Fotos</a></li>
-              <li><a href="#arquitetos" className="hover:text-poolCyan transition-colors">Espaço Arquitetos</a></li>
               <li><a href="#contato" className="hover:text-poolCyan transition-colors">Contato & Orçamento</a></li>
             </ul>
           </div>
@@ -69,7 +67,7 @@ export default function Footer() {
 
         {/* Bottom Bar & Copyright */}
         <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400 font-bold">
-          <p>© {new Date().getFullYear()} Pool Brothers. Todos os direitos reservados. O Autêntico Método Americano.</p>
+          <p>© {new Date().getFullYear()} Brothers Pool Brasil. Todos os direitos reservados. O Autêntico Método Americano.</p>
           
           <button
             onClick={scrollToTop}

@@ -33,28 +33,11 @@ export default function AboutUs() {
                 Especialistas em Re-imaginar o Luxo e a Engenharia de Piscinas
               </h3>
               <p className="text-slate-600 text-base sm:text-lg leading-relaxed font-normal">
-                Com mais de <strong className="text-flagBlue font-bold">25 anos de atuação contínua</strong> no mercado norte-americano, a <strong className="text-slate-900 font-bold">Pool Brothers</strong> construiu sua trajetória na linha de frente dos estados de <span className="text-slate-900 font-bold">Massachusetts, Flórida e Califórnia</span>.
+                Com mais de <strong className="text-flagBlue font-bold">25 anos de atuação contínua</strong> no mercado norte-americano, a <strong className="text-slate-900 font-bold">Brothers Pool Brasil</strong> construiu sua trajetória na linha de frente dos estados de <span className="text-slate-900 font-bold">Massachusetts, Flórida e Califórnia</span>.
               </p>
               <p className="text-slate-600 text-base leading-relaxed font-normal">
                 Somos especialistas dedicados à criação e revestimento de piscinas de alto padrão, combinando técnicas avançadas de engenharia hidráulica e acabamentos minerais nobres que eliminam rejuntes e falhas tradicionais.
               </p>
-            </div>
-
-            {/* US States Pills */}
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="text-xs font-bold text-slate-500 uppercase tracking-wider w-full mb-1">Presença Consolidada nos EUA:</span>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 font-semibold text-sm hover:border-flagBlue/40 transition-colors shadow-sm">
-                <MapPin className="w-4 h-4 text-stripedRed" />
-                Massachusetts
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 font-semibold text-sm hover:border-flagBlue/40 transition-colors shadow-sm">
-                <MapPin className="w-4 h-4 text-stripedRed" />
-                Flórida
-              </div>
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-100 border border-slate-200 text-slate-800 font-semibold text-sm hover:border-flagBlue/40 transition-colors shadow-sm">
-                <MapPin className="w-4 h-4 text-stripedRed" />
-                Califórnia
-              </div>
             </div>
 
             {/* Mission Callout Box */}
@@ -103,7 +86,7 @@ export default function AboutUs() {
               {/* Generated Realistic Crew Image */}
               <img 
                 src="/images/quem_somos_equipe.png" 
-                alt="Equipe especialista da Pool Brothers trabalhando na aplicação de revestimento em piscina de luxo" 
+                alt="Equipe especialista da Brothers Pool Brasil trabalhando na aplicação de revestimento em piscina de luxo" 
                 className="w-full h-[450px] sm:h-[540px] object-cover transform group-hover:scale-105 transition-transform duration-700"
               />
               

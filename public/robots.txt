@@ -1,4 +1,4 @@
-# robots.txt para Pool Brothers
+# robots.txt para Brothers Pool Brasil
 User-agent: *
 Allow: /
 

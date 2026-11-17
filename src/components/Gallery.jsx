@@ -75,7 +75,7 @@ export default function Gallery() {
             Galeria de <span className="text-poolCyan-dark italic font-normal">Projetos Executados</span>
           </h2>
           <p className="text-slate-600 font-medium text-base">
-            Conheça a sofisticação e o acabamento impecável das piscinas executadas pela Pool Brothers nos EUA e nas regiões mais nobres do Brasil.
+            Conheça a sofisticação e o acabamento impecável das piscinas executadas pela Brothers Pool Brasil nos EUA e nas regiões mais nobres do Brasil.
           </p>
         </div>
 

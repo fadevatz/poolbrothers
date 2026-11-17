@@ -14,7 +14,7 @@ export default function Logo({ size = 'medium', className = '' }) {
     <div className={`inline-flex items-center bg-white px-3 py-1.5 rounded-2xl shadow-sm border border-slate-200/80 hover:scale-[1.03] hover:shadow-md transition-all duration-300 ${className}`}>
       <img
         src="/images/logo_pool_brothers.png"
-        alt="Pool Brothers - O Autêntico Método Americano de Piscinas de Luxo"
+        alt="Brothers Pool Brasil - O Autêntico Método Americano de Piscinas de Luxo"
         className={`${currentSize} w-auto object-contain`}
       />
     </div>

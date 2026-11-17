@@ -80,7 +80,7 @@ export default function ArchitectsSpace() {
                     <h4 className="text-lg font-black text-flagBlue">Parceria Corporativa</h4>
                   </div>
                   <span className="text-xs font-bold text-white bg-stripedRed px-2.5 py-1 rounded-full uppercase tracking-wider">
-                    Pool Brothers Pro
+                    Brothers Pool Brasil Pro
                   </span>
                 </div>
 

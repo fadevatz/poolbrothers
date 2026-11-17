@@ -74,7 +74,7 @@ export default function BeforeAfterSlider() {
             {/* AFTER Image (Background Base) */}
             <img
               src="/images/after_pool.png"
-              alt="Depois: Piscina Plaster Americano Pool Brothers"
+              alt="Depois: Piscina Plaster Americano Brothers Pool Brasil"
               className="absolute inset-0 w-full h-full object-cover"
             />
             <div className="absolute top-3 right-3 sm:top-6 sm:right-6 px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-flagBlue text-white text-xs font-bold uppercase tracking-wider backdrop-blur-md z-10 shadow-lg border border-white/20">

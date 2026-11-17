@@ -11,7 +11,7 @@ export default function Differentials() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-stripedRed/10 border border-stripedRed/20 text-stripedRed text-xs font-black uppercase tracking-widest">
             <Star className="w-4 h-4 text-stripedRed" />
-            Por Que Escolher a Pool Brothers?
+            Por Que Escolher a Brothers Pool Brasil?
           </div>
           <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-flagBlue tracking-tight">
             Diferenciais <span className="text-poolCyan-dark italic font-normal">Incomparáveis</span>
@@ -34,7 +34,7 @@ export default function Differentials() {
               <span className="text-xs font-black text-stripedRed tracking-widest uppercase">01. Agilidade Extrema</span>
               <h3 className="font-display text-3xl font-bold text-flagBlue">Velocidade Incomparável</h3>
               <p className="text-slate-600 text-sm leading-relaxed font-medium">
-                O que a concorrência tradicional leva de <strong>3 a 4 dias</strong> para aplicar manualmente, a equipe Pool Brothers executa em <strong>até 1 único dia</strong> com nosso maquinário hidráulico jateado.
+                O que a concorrência tradicional leva de <strong>3 a 4 dias</strong> para aplicar manualmente, a equipe Brothers Pool Brasil executa em <strong>até 1 único dia</strong> com nosso maquinário hidráulico jateado.
               </p>
             </div>
 
@@ -44,7 +44,7 @@ export default function Differentials() {
                 <span>3 a 4 dias</span>
               </div>
               <div className="flex items-center justify-between p-2.5 rounded-xl bg-flagBlue text-white font-black shadow">
-                <span>Método Pool Brothers:</span>
+                <span>Método Brothers Pool Brasil:</span>
                 <span className="bg-poolCyan text-flagBlue-dark px-2.5 py-0.5 rounded text-xs font-bold uppercase">Até 1 Dia</span>
               </div>
             </div>

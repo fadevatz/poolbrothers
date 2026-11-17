@@ -19,9 +19,7 @@ export default function Header() {
     { name: 'Diferenciais', href: '#diferenciais' },
     { name: 'O Método', href: '#metodo' },
     { name: 'Serviços', href: '#servicos' },
-    { name: 'Cores', href: '#cores' },
     { name: 'Galeria', href: '#galeria' },
-    { name: 'Arquitetos', href: '#arquitetos' },
     { name: 'Contato', href: '#contato' },
   ];
 
